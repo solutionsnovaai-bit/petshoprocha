@@ -1,0 +1,23 @@
+/* =========================================================
+   Cores da loja. Para outro pet shop, troque só este bloco.
+   ========================================================= */
+:root {
+  --principal: #0F9D94;        /* verde-água: botões e destaques */
+  --principal-escuro: #0A6B65;
+  --principal-claro: #DDF3F0;
+  --acento: #FFB224;           /* amarelo-sol */
+  --acento-escuro: #DB6E00;
+  --acento-claro: #FFE8B8;
+  --terceira: #D9623A;         /* terracota das portas da abertura e da chamada final */
+  --terceira-escuro: #AE4523;
+  --madeira: #1C4E57;
+  --madeira-escura: #0F3238;   /* rodapé e botão escuro */
+  --fundo: #F3FAF9;            /* fundo claro, levemente verde-água */
+  --fundo-2: #E3F3F1;
+  --papel: #FFFFFF;
+  --tinta: #16292C;            /* texto */
+  --tinta-2: #45595D;
+  --tinta-3: #768A8E;
+  --porta-moldura: #F1FBFF;    /* moldura em X das portas */
+  --bolha: #BFEAF7;            /* bolhas de sabão */
+}

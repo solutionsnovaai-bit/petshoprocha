@@ -1,0 +1,22 @@
+Imagens desta loja. Para outro pet shop, troque os arquivos mantendo os nomes.
+
+  hero/cachorro-recorte.webp, cachorro-recorte-480.webp
+      Cachorro recortado, com FUNDO TRANSPARENTE (sai da banheira no topo do site).
+
+  hero/gato-recorte.webp
+      Gato recortado, com FUNDO TRANSPARENTE (espia ao lado do cachorro).
+
+  fotos/tutor-cachorro-*.webp, tutora-gato-*.webp, passaro-*.webp
+      Fotos da seção "Aqui tem de tudo" (4:3), em 1400 e 760 px.
+
+  fotos/brinquedos-*.webp, cachorro-*.webp, gato-*.webp
+      Mural "Pet feliz é pet que brinca" (4:3), em 1400 e 760 px.
+
+  fotos/loja-1100.webp, loja-600.webp (opcional)
+      Foto real da loja. Coloque os arquivos e preencha ONDE.fotoLoja em src/loja.ts.
+
+  marcas/<nome>.webp
+      Logos das marcas com fundo transparente. A lista fica em MARCAS, dentro de src/loja.ts.
+
+  logo-1000.webp, logo-480.webp, logo-220.webp (opcional)
+      Se a loja tiver uma arte de logotipo com fundo transparente. Depois use LOJA.logo.imagem: true.
