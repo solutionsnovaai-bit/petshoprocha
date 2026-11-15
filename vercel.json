@@ -1,15 +1,7 @@
 {
-  "framework": null,
-  "installCommand": "echo site desativado",
-  "buildCommand": "echo site desativado",
-  "outputDirectory": "desativado",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-        { "key": "Cache-Control", "value": "no-store" }
-      ]
-    }
+    { "source": "/diamond/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
   ]
 }

@@ -2,13 +2,11 @@ import { Clock, MapPin, Navigation } from 'lucide-react'
 import { LOJA, MENSAGENS, ONDE } from '../loja'
 import { waLink } from '../lib/whatsapp'
 import { linkRota, mapaEmbed } from '../lib/mapa'
-import { useStatusLoja } from '../lib/horario'
 import BrandIcon from './BrandIcon'
 import { Pata } from './Icones'
 import Reveal, { Titulo } from './Reveal'
 
 export default function OndeEstamos() {
-  const s = useStatusLoja()
   const e = LOJA.endereco
   return <section id="onde-estamos" className="onde secao">
     <div className="wrap onde-grade">
@@ -25,7 +23,6 @@ export default function OndeEstamos() {
             <div>
               <b>Horário</b>
               <p>{LOJA.horario.texto}{LOJA.horario.diasTexto ? `, ${LOJA.horario.diasTexto}` : ''}</p>
-              <p className={`onde-agora ${s.aberto ? 'is-aberto' : 'is-fechado'}`}><i aria-hidden="true" />{s.curto} · {s.longo}</p>
             </div>
           </div>
           {LOJA.whatsappExibicao && <div className="onde-linha">
@@ -38,16 +35,11 @@ export default function OndeEstamos() {
           </div>
         </Reveal>
       </div>
-      <div className={`onde-visual ${ONDE.fotoLoja ? '' : 'sem-foto'}`}>
+      <div className="onde-visual sem-foto">
         <Reveal className="onde-mapa" delay={0.1} y={40}>
           <iframe title={`Mapa: ${LOJA.nome}, ${e.rua}, ${e.bairro}`} src={mapaEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
           <a className="onde-mapa-selo" href={linkRota} target="_blank" rel="noopener noreferrer"><Pata />{LOJA.nome}</a>
         </Reveal>
-        {ONDE.fotoLoja && <Reveal as="figure" className="onde-foto" delay={0.25} y={30}>
-          <img src="/loja/fotos/loja-600.webp" srcSet="/loja/fotos/loja-600.webp 600w, /loja/fotos/loja-1100.webp 1100w" sizes="(max-width: 900px) 80vw, 360px" width={1100} height={541} alt={ONDE.fotoLoja} loading="lazy" decoding="async" />
-          <figcaption>{ONDE.legendaFoto}</figcaption>
-          <span className="fita-adesiva" aria-hidden="true" />
-        </Reveal>}
       </div>
     </div>
   </section>

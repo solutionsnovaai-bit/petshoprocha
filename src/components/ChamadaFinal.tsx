@@ -3,7 +3,6 @@ import { waLink } from '../lib/whatsapp'
 import BrandIcon from './BrandIcon'
 import { Pata } from './Icones'
 import Reveal from './Reveal'
-import LogoTexto from './LogoTexto'
 
 /** Cartão final com a madeira vermelha das portas do celeiro. */
 export default function ChamadaFinal() {
@@ -11,9 +10,7 @@ export default function ChamadaFinal() {
     <Reveal className="wrap" y={40}>
       <div className="chamada-cartao">
         <svg className="chamada-traves" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M3 3H97V97H3Z M3 3L97 97 M97 3L3 97" /></svg>
-        {LOJA.logo.imagem
-          ? <img className="chamada-logo" src="/loja/logo-480.webp" srcSet="/loja/logo-480.webp 480w, /loja/logo-1000.webp 1000w" sizes="(max-width: 900px) 60vw, 340px" width={480} height={359} alt="" loading="lazy" decoding="async" />
-          : <span className="chamada-logo chamada-logo-texto"><LogoTexto tamanho="chamada" /></span>}
+        <img className="chamada-logo" src="/diamond/logo-640.webp" width={640} height={640} alt="" decoding="async" />
         <div className="chamada-texto">
           <h2><span>{CHAMADA.titulo}</span> <em>{CHAMADA.destaque}</em></h2>
           <p>{CHAMADA.texto}</p>

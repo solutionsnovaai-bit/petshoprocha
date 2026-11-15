@@ -4,10 +4,9 @@ import Abertura from './components/Abertura'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Faixas from './components/Faixas'
-import Pets from './components/Pets'
-import Marcas from './components/Marcas'
-import ComoComprar from './components/ComoComprar'
-import Brincar from './components/Brincar'
+import Servicos from './components/Servicos'
+import Galeria from './components/Galeria'
+import ComoAgendar from './components/ComoAgendar'
 import OndeEstamos from './components/OndeEstamos'
 import Duvidas from './components/Duvidas'
 import ChamadaFinal from './components/ChamadaFinal'
@@ -43,16 +42,15 @@ function Site() {
   return <>
     {abertura && <Abertura onAbrir={abrir} onFim={fim} />}
     <div className="site" inert={!pronto}>
-      <a className="pular-conteudo" href="#produtos">Pular para o conteúdo</a>
+      <a className="pular-conteudo" href="#servicos">Pular para o conteúdo</a>
       <motion.div className="progresso" style={{ scaleX: reduced ? scrollYProgress : progresso }} aria-hidden="true" />
       <Header menuAberto={menu} setMenuAberto={setMenu} />
       <main>
         <Hero pronto={pronto} />
         <Faixas />
-        <Pets />
-        <Marcas />
-        <ComoComprar />
-        <Brincar />
+        <Servicos />
+        <Galeria />
+        <ComoAgendar />
         <OndeEstamos />
         <Duvidas />
         <ChamadaFinal />
