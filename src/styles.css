@@ -527,11 +527,40 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .abertura-patas, .abertura-texto { color: #103e86; }
 
 @media (max-width: 760px) {
-  .diamond-hero { padding-top: calc(var(--topo-h) + 22px); }
-  /* A nova arte mobile ja tem o logotipo centrado; manter o enquadramento centralizado. */
-  .diamond-hero-arte img { object-position: center top; }
-  /* Reserva espaco para o logo sangrando no topo antes da copy, sem coluna fantasma. */
-  .diamond-hero-conteudo { grid-template-columns: minmax(0, 1fr); gap: 16px; min-height: 0; padding-top: clamp(360px, 110vw, 500px); }
+  /* O hero mobile ocupa uma area propria, independente da altura da copy.
+     Nao usar object-fit: cover em arte que contem logotipo e lettering. */
+  .diamond-hero {
+    padding-top: calc(var(--topo-h) + 26px);
+    padding-bottom: clamp(72px, 12vw, 110px);
+    background: #faf7f3;
+  }
+  .diamond-hero-arte {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 0.94;
+    margin: 0 auto;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
+  }
+  .diamond-hero-arte img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center top;
+  }
+  /* Texto com fluxo normal abaixo da arte, sem zoom e sem espacador artificial. */
+  .diamond-hero-conteudo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    min-height: 0;
+    padding-top: 0;
+  }
   .diamond-hero .hero-cartao { grid-area: 1 / 1; }
   .diamond-hero .hero-acoes { align-items: stretch; }
   .marca-topo { height: calc(var(--topo-h) - 6px); max-width: min(48vw, 190px); }
