@@ -528,10 +528,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 @media (max-width: 760px) {
   .diamond-hero { padding-top: calc(var(--topo-h) + 22px); }
-  /* O asset mobile antigo possui o bordado um pouco a direita: reenquadrar sem esticar a imagem. */
-  .diamond-hero-arte img { object-position: 82% top; }
+  /* A nova arte mobile ja tem o logotipo centrado; manter o enquadramento centralizado. */
+  .diamond-hero-arte img { object-position: center top; }
   /* Reserva espaco para o logo sangrando no topo antes da copy, sem coluna fantasma. */
-  .diamond-hero-conteudo { grid-template-columns: minmax(0, 1fr); gap: 16px; min-height: 0; padding-top: clamp(290px, 75vw, 440px); }
+  .diamond-hero-conteudo { grid-template-columns: minmax(0, 1fr); gap: 16px; min-height: 0; padding-top: clamp(360px, 110vw, 500px); }
   .diamond-hero .hero-cartao { grid-area: 1 / 1; }
   .diamond-hero .hero-acoes { align-items: stretch; }
   .marca-topo { height: calc(var(--topo-h) - 6px); max-width: min(48vw, 190px); }
