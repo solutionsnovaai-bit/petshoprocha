@@ -513,9 +513,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .diamond-hero h1 { font: 800 clamp(2.45rem, 10.5cqi, 4.1rem)/1.02 var(--sans); letter-spacing: -.065em; }
 .diamond-hero h1 span { color: var(--principal); }
 .diamond-hero .hero-texto { max-width: 42ch; }
-.diamond-hero-marca { grid-area: 1 / 2; justify-self: center; width: min(100%, 480px); }
+.diamond-hero-marca { display: none; } /* O logo texturizado faz parte da arte do hero; nao duplicar o logo antigo. */
 .diamond-hero-marca img { display: block; width: 100%; height: auto; filter: drop-shadow(0 16px 23px #163f7524); }
-.marca-topo { width: auto; height: calc(var(--topo-h) - 12px); object-fit: contain; }
+.marca-topo { width: auto; height: calc(var(--topo-h) - 4px); object-fit: contain; }
 .marca-rodape, .chamada-logo { background: #f8fbff; padding: 10px; border-radius: 22px; }
 .diamond-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; list-style: none; padding: 0; margin: 24px 0 0; }
 .diamond-servicos li { background: var(--papel); border: 1px solid var(--principal-claro); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
@@ -528,10 +528,13 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 @media (max-width: 760px) {
   .diamond-hero { padding-top: calc(var(--topo-h) + 22px); }
-  .diamond-hero-arte img { object-position: center top; }
-  .diamond-hero-conteudo { grid-template-columns: minmax(0, 1fr); gap: 16px; min-height: 0; }
-  .diamond-hero .hero-cartao { grid-area: 2 / 1; }
-  .diamond-hero-marca { grid-area: 1 / 1; width: min(100%, 330px); }
+  /* O asset mobile antigo possui o bordado um pouco a direita: reenquadrar sem esticar a imagem. */
+  .diamond-hero-arte img { object-position: 82% top; }
+  /* Reserva espaco para o logo sangrando no topo antes da copy, sem coluna fantasma. */
+  .diamond-hero-conteudo { grid-template-columns: minmax(0, 1fr); gap: 16px; min-height: 0; padding-top: clamp(290px, 75vw, 440px); }
+  .diamond-hero .hero-cartao { grid-area: 1 / 1; }
+  .diamond-hero .hero-acoes { align-items: stretch; }
+  .marca-topo { height: calc(var(--topo-h) - 6px); max-width: min(48vw, 190px); }
 }
 
 .carrossel-pets { max-width: 980px; margin: 0 auto 22px; overflow: hidden; }
